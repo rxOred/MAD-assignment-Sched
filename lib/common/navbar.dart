@@ -12,18 +12,18 @@ class CustomNavigationBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(bottom: 10.0),
       child: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(color: Theme.of(context).primaryColor, Icons.list),
+            icon: Icon(color: Color.fromARGB(255, 30, 129, 33), Icons.list),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(color: Theme.of(context).primaryColor, Icons.add),
+            icon: Icon(color: Color.fromARGB(255, 30, 129, 33), Icons.add),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon:
-                Icon(color: Theme.of(context).primaryColor, Icons.meeting_room),
+            icon: Icon(
+                color: Color.fromARGB(255, 30, 129, 33), Icons.meeting_room),
             label: '',
           ),
         ],

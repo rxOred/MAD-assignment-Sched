@@ -67,8 +67,8 @@ class _CreateScreenState extends State<CreateScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedType == 'Task'
-                          ? Theme.of(context).primaryColor
-                          : const Color.fromARGB(255, 216, 213, 213),
+                          ? const Color.fromARGB(255, 13, 103, 16)
+                          : Theme.of(context).canvasColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -90,8 +90,8 @@ class _CreateScreenState extends State<CreateScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: selectedType == 'Meeting'
-                          ? Theme.of(context).primaryColor
-                          : const Color.fromARGB(255, 216, 213, 213),
+                          ? const Color.fromARGB(255, 13, 103, 16)
+                          : Theme.of(context).canvasColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),

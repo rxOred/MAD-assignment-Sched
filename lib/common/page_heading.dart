@@ -26,7 +26,7 @@ class PageHeadingWidget extends StatelessWidget {
                   fontSize: 25,
                   fontWeight: FontWeight.w400,
                   height: 1.25,
-                  color: Theme.of(context).primaryColor,
+                  color: const Color.fromARGB(255, 30, 129, 33),
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:contacts_service/contacts_service.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 Future<List<Contact>> fetchContacts() async {
@@ -37,16 +38,31 @@ class _InviteScreenState extends State<InviteScreen> {
   @override
   void initState() {
     super.initState();
-    fetchContacts().then((contacts) {
-      setState(() {
-        allContacts = contacts;
-        // Filter recent contacts based on your logic, e.g., last contacted within a week
-        recentContacts = allContacts.where((contact) {
-          return contact.emails?.isNotEmpty ==
-              true; // Adjust the condition as needed
-        }).toList();
+    requestContactsPermission();
+  }
+
+  Future<void> requestContactsPermission() async {
+    final status = await Permission.contacts.request();
+    if (status.isGranted) {
+      // Permission is granted, you can now fetch contacts
+      // Fetch contacts logic here
+      print("permission granted");
+      fetchContacts().then((contacts) {
+        setState(() {
+          allContacts = contacts;
+          // Filter recent contacts based on your logic, e.g., last contacted within a week
+          recentContacts = allContacts.where((contact) {
+            return contact.emails?.isNotEmpty ==
+                true; // Adjust the condition as needed
+          }).toList();
+        });
       });
-    });
+    } else {
+      print("permission not granted");
+      // Permission denied
+      // Handle permission denial, possibly show a message to the user
+      Navigator.pop(context);
+    }
   }
 
   @override
