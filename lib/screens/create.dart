@@ -167,7 +167,7 @@ class _CreateScreenState extends State<CreateScreen> {
             const SizedBox(height: 16.0),
             IconButton(
               iconSize: 50,
-              color: Theme.of(context).primaryColor,
+              color: const Color.fromARGB(255, 30, 129, 33),
               onPressed: _onNextPressed,
               icon: const Icon(
                 Icons.arrow_forward,
